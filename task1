@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+/**
+    * @breef  - функция подставляет значение const в уравнение.
+    * @param x-аргумент функции 
+    * @param y-аргумент функции
+    * @param z-аргумент функции
+*/
+
+double getA(const double x, const double y, const double z);
+
+/**
+    * @breef  - функция подставляет значение const в уравнение.
+    * @param x-аргумент функции 
+    * @param y-аргумент функции
+    * @param z-аргумент функции
+*/
+
+double getB(const double x, const double y, const double z);
+
+/**
+    * @breef  - точка входа в программу
+    * @return возращает 0, если программа выполнена верно, иначе 1
+*/
+
+int main()
+{
+    const double x = 2.2, y = 9.2, z = 10.2;
+    double a;
+    cout << "x="<< x <<"  y="<< y <<"  z="<< z <<endl;
+    cout << "a="<< getA(x, y, z) <<"  b="<< getB(x, y, z) << endl;
+    return 0;
+}
+
+double getA(const double x, const double y, const double z)
+{
+    return log(z+pow(x,2)) + pow(sin(x/y),2);
+}
+
+double getB(const double x, const double y, const double z)
+{
+    return exp(-z) * (x+sqrt(x+z))/(x-sqrt(abs(x-y)));
+}
